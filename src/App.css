@@ -15,14 +15,13 @@ body{
   display: flex;
   height: 100vh;
   font-family: Arial, sans-serif;
-  /* border: 2px solid goldenrod; */
+  border: 2px solid goldenrod;
 }
 .main-content {
   flex: 1;
   padding: 20px;
-  width: 200px;
   background-color: #f5f6fa;
-  /* border: 2px solid goldenrod; */
+  border: 2px solid goldenrod;
 }
 .conta{
   display: flex;
