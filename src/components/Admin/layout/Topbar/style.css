@@ -1,0 +1,67 @@
+.TopbarMain {
+  border-bottom: 1px solid #ddd;
+  padding: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+.logo-icon {
+  /* border: 2px solid green; */
+  color: #137fec;
+  height: 30px;
+  width: 30px;
+}
+.adminLogo {
+  /* border: 2px solid green; */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.logoName {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* border: 2px solid green; */
+}
+.search {
+  position: relative;
+}
+.searchIcon {
+  align-items: center;
+  margin-top: 2px;
+}
+.search input {
+  padding: 8px 10px 8px 30px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.search span {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  color: #888;
+}
+.icon-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.notificationIcon {
+  font-size: 20px;
+}

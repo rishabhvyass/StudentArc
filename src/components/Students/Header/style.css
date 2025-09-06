@@ -1,0 +1,10 @@
+.mainContainer {
+  border: 2px solid green;
+padding: 20px ;
+display: flex;
+
+}
+.logo{
+  border: 2px solid green;
+ 
+}
