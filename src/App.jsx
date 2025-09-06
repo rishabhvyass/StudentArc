@@ -9,24 +9,51 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "./components/Admin/layout/topbar";
 import Sidebar from "./components/Admin/layout/sidebar";
 import AdminDashboard from "./components/Admin/AdminDashboard";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
 
 function App() {
   return (
-    <>
-      <Topbar />
-      <div className="conta">
-        <div className="main-content">
-          <Routes>
-            <Route path="/dashborad" element={<AdminDashboard />} />
-            <Route path="/Sidebar" element={<Sidebar />} />
-          </Routes>
-        </div>
-
-        <div className="app-container">
-          <Sidebar />
-        </div>
-      </div>
-    </>
+    <Routes>
+      {/* Login Route - Main entry point */}
+      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      
+      {/* Register Route */}
+      <Route path="/register" element={<Register />} />
+      
+      {/* Admin Routes */}
+      <Route path="/admin" element={
+        <>
+          <Topbar />
+          <div className="conta">
+            <div className="main-content">
+              <AdminDashboard />
+            </div>
+            <div className="app-container">
+              <Sidebar />
+            </div>
+          </div>
+        </>
+      } />
+      
+      <Route path="/dashboard" element={
+        <>
+          <Topbar />
+          <div className="conta">
+            <div className="main-content">
+              <AdminDashboard />
+            </div>
+            <div className="app-container">
+              <Sidebar />
+            </div>
+          </div>
+        </>
+      } />
+      
+      {/* Student Routes can be added here later */}
+      <Route path="/student" element={<div>Student Dashboard - Coming Soon</div>} />
+    </Routes>
   );
 }
 
