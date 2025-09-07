@@ -1,0 +1,18 @@
+.admin-layout-container {
+  display: flex;
+  min-height: calc(100vh - 70px); /* Subtract topbar height */
+}
+
+.admin-main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f8fafc;
+  margin-left: 250px; /* Sidebar width */
+}
+
+@media (max-width: 768px) {
+  .admin-main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}

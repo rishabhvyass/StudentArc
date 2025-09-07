@@ -1,0 +1,515 @@
+.student-dashboard {
+  margin-top: 60px; /* Account for fixed topbar */
+  min-height: calc(100vh - 60px);
+  background-color: #f5f7fa;
+}
+
+.dashboard-header {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.dashboard-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Banner Section */
+.banner-section {
+  margin-bottom: 30px;
+}
+
+.tech-fest-banner {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+  border-radius: 12px;
+  padding: 30px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-content {
+  flex: 1;
+  z-index: 2;
+  position: relative;
+}
+
+.banner-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.banner-subtitle {
+  font-size: 16px;
+  margin: 0 0 20px 0;
+  opacity: 0.9;
+}
+
+.banner-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+.banner-image {
+  flex: 1;
+  height: 140px;
+  position: relative;
+  max-width: 300px;
+}
+
+.world-map {
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60"><path d="M10,30 Q30,10 50,30 T90,30" stroke="white" stroke-width="0.5" fill="none" opacity="0.3"/><circle cx="20" cy="25" r="1" fill="white" opacity="0.6"/><circle cx="40" cy="35" r="1" fill="white" opacity="0.6"/><circle cx="70" cy="20" r="1" fill="white" opacity="0.6"/></svg>') center/contain no-repeat;
+  opacity: 0.6;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  border: 1px solid #e2e8f0;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 20px 0;
+}
+
+/* Left Column */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Attendance Card */
+.attendance-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.circular-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.progress-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+}
+
+.progress-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-percentage {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Fees Card */
+.fee-item {
+  border: 1px solid #fef3cd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fffbeb;
+}
+
+.fee-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.fee-type {
+  font-weight: 500;
+  color: #92400e;
+}
+
+.fee-amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.fee-due {
+  font-size: 12px;
+  color: #a16207;
+  margin-bottom: 12px;
+}
+
+.pay-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pay-btn:hover {
+  background: #b91c1c;
+}
+
+/* Right Column */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  border: 1px solid #e2e8f0;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+}
+
+.profile-id {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 16px 0;
+}
+
+.view-profile-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.view-profile-btn:hover {
+  background: #3730a3;
+}
+
+/* Notifications */
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notification-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.notification-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.notification-icon.success {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.notification-icon.warning {
+  background: #fef3cd;
+  color: #d97706;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+}
+
+.notification-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Quick Links */
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.quick-link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-link-item:hover {
+  background: #f8fafc;
+  border-color: #4f46e5;
+}
+
+.quick-link-icon {
+  font-size: 24px;
+}
+
+/* Certifications Section */
+.certifications-section {
+  margin-bottom: 40px;
+}
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.certifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.certification-item:hover {
+  background: #f8fafc;
+}
+
+.cert-icon {
+  width: 40px;
+  height: 40px;
+  background: #eef2ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f46e5;
+  font-size: 18px;
+}
+
+.cert-info {
+  flex: 1;
+}
+
+.cert-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+}
+
+.cert-date {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.cert-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.cert-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.cert-btn:hover {
+  background: #f8fafc;
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+/* Footer */
+.dashboard-footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 40px;
+}
+
+.dashboard-footer p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .tech-fest-banner {
+    flex-direction: column;
+    text-align: center;
+    min-height: 150px;
+  }
+  
+  .banner-image {
+    margin-top: 20px;
+    max-width: 200px;
+  }
+  
+  .dashboard-title {
+    font-size: 24px;
+  }
+  
+  .quick-links-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .certification-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .cert-actions {
+    align-self: stretch;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .tech-fest-banner {
+    padding: 20px;
+  }
+  
+  .banner-title {
+    font-size: 20px;
+  }
+}
