@@ -1,0 +1,19 @@
+/* Import the same styles as Login since they're identical */
+@import '../Login/style.css';
+
+/* Additional animations for register form fields */
+.form-group:nth-child(5) {
+  animation: fadeInUp 0.4s ease-out 1.4s both;
+}
+
+.form-group:nth-child(6) {
+  animation: fadeInUp 0.4s ease-out 1.5s both;
+}
+
+.form-group:nth-child(7) {
+  animation: fadeInUp 0.4s ease-out 1.6s both;
+}
+
+.form-group:nth-child(8) {
+  animation: fadeInUp 0.4s ease-out 1.7s both;
+}

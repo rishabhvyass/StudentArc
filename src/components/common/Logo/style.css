@@ -1,0 +1,200 @@
+/* StudentArc Logo Component Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.studentarc-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  user-select: none;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cap-svg {
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.cap-base {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    fill: rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    fill: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.tassel {
+  animation: sway 4s ease-in-out infinite;
+  transform-origin: 60px 35px;
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+
+.decorative-circle {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brand-name {
+  font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+}
+
+.student-text {
+  color: white;
+}
+
+.arc-text {
+  color: #60a5fa;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+.tagline {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* Size Variants */
+.logo-small .cap-svg {
+  width: 24px;
+  height: 20px;
+}
+
+.logo-small .brand-name {
+  font-size: 1rem;
+}
+
+.logo-small .tagline {
+  font-size: 0.625rem;
+}
+
+.logo-medium .cap-svg {
+  width: 36px;
+  height: 30px;
+}
+
+.logo-medium .brand-name {
+  font-size: 1.5rem;
+}
+
+.logo-medium .tagline {
+  font-size: 0.75rem;
+}
+
+.logo-large .cap-svg {
+  width: 60px;
+  height: 50px;
+}
+
+.logo-large .brand-name {
+  font-size: 2.5rem;
+}
+
+.logo-large .tagline {
+  font-size: 0.875rem;
+}
+
+.logo-xlarge .cap-svg {
+  width: 80px;
+  height: 66px;
+}
+
+.logo-xlarge .brand-name {
+  font-size: 3.5rem;
+}
+
+.logo-xlarge .tagline {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo-xlarge .brand-name {
+    font-size: 2.5rem;
+  }
+  
+  .logo-xlarge .tagline {
+    font-size: 0.875rem;
+  }
+  
+  .logo-large .brand-name {
+    font-size: 2rem;
+  }
+  
+  .logo-large .tagline {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .studentarc-logo {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-xlarge .brand-name {
+    font-size: 2rem;
+  }
+  
+  .logo-xlarge .tagline {
+    font-size: 0.75rem;
+  }
+  
+  .logo-large .brand-name {
+    font-size: 1.75rem;
+  }
+}
