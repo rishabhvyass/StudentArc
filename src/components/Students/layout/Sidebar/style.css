@@ -20,10 +20,12 @@
 .student-sidebar-content {
   padding: 20px 0;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .student-sidebar-nav {
-  height: 100%;
+  flex: 1;
 }
 
 .student-nav-list {
@@ -72,6 +74,79 @@
 
 .student-nav-text {
   flex: 1;
+}
+
+/* Disabled navigation items */
+.student-nav-link.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  color: #9ca3af;
+  position: relative;
+}
+
+.student-nav-link.disabled:hover {
+  background-color: transparent;
+  color: #9ca3af;
+  border-left-color: transparent;
+}
+
+.student-nav-link.disabled .coming-soon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  background: #fbbf24;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 0 20px 20px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  width: 100%;
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.logout-btn:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.logout-btn .student-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+}
+
+.logout-btn .student-nav-text {
+  flex: 1;
+  text-align: left;
 }
 
 /* Custom scrollbar */

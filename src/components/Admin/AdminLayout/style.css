@@ -1,18 +1,59 @@
+.admin-layout {
+  min-height: 100vh;
+}
+
 .admin-layout-container {
   display: flex;
-  min-height: calc(100vh - 70px); /* Subtract topbar height */
+  padding-top: 60px; /* Account for fixed topbar */
 }
 
 .admin-main-content {
   flex: 1;
-  padding: 2rem;
+  padding: 30px;
   background-color: #f8fafc;
-  margin-left: 250px; /* Sidebar width */
+  min-height: calc(100vh - 60px);
+  margin-left: 0;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: margin-left;
 }
 
-@media (max-width: 768px) {
+/* Desktop behavior - sidebar pushes content */
+@media (min-width: 769px) {
+  .admin-main-content.sidebar-open {
+    margin-left: 250px;
+  }
+  
   .admin-main-content {
     margin-left: 0;
-    padding: 1rem;
+  }
+}
+
+.admin-sidebar-overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
+}
+
+/* Mobile behavior - overlay for sidebar */
+@media (max-width: 768px) {
+  .admin-sidebar-overlay {
+    display: block;
+  }
+  
+  .admin-main-content {
+    padding: 20px;
+    margin-left: 0 !important; /* Never push content on mobile */
+  }
+}
+
+/* Desktop - no overlay needed */
+@media (min-width: 769px) {
+  .admin-sidebar-overlay {
+    display: none;
   }
 }

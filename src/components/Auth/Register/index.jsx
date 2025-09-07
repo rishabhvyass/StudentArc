@@ -57,8 +57,8 @@ const Register = () => {
 
       register(userData);
 
-      // Navigate to admin dashboard
-      navigate('/admin/dashboard');
+      // Navigate to dashboard
+      navigate('/dashboard');
     } catch (err) {
       setError('Registration failed. Please try again.');
     } finally {
