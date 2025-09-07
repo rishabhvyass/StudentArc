@@ -28,7 +28,7 @@ const Login = () => {
     setSelectedRole(role);
     setFormData({
       ...formData,
-      role: role === "student" ? "student" : "faculty",
+      role: role === "student" ? "student" : "admin",
     });
   };
 
@@ -44,8 +44,8 @@ const Login = () => {
       if (formData.email && formData.password) {
         const userData = {
           email: formData.email,
-          role: selectedRole === "student" ? "student" : "faculty",
-          name: selectedRole === "student" ? "Alex Johnson" : "Faculty User",
+          role: selectedRole === "student" ? "student" : "admin",
+          name: selectedRole === "student" ? "Alex Johnson" : "Admin User",
           id: Math.random().toString(36).substr(2, 9),
         };
 
@@ -55,7 +55,7 @@ const Login = () => {
         console.log('Navigating user with role:', selectedRole, userData.role);
         if (selectedRole === "student") {
           console.log('Redirecting to student dashboard');
-          navigate("/student/dashboard");
+          navigate("/dashboard");
         } else if (selectedRole === "admin") {
           console.log('Redirecting to admin dashboard');
           navigate("/admin/dashboard");

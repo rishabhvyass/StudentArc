@@ -73,9 +73,6 @@ const StudentTopbar = ({ toggleSidebar, sidebarOpen }) => {
               <div className="dropdown-item">
                 <span>Settings</span>
               </div>
-              <div className="dropdown-item logout">
-                <span>Logout</span>
-              </div>
             </div>
           )}
         </div>

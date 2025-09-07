@@ -1,68 +1,86 @@
-import React from "react";
-import { GrSearch } from "react-icons/gr";
-import { BsBell } from "react-icons/bs";
-import { MdLogout } from "react-icons/md";
+import React, { useState } from 'react';
+import { FaBars, FaBell, FaSearch, FaUser, FaChevronDown } from 'react-icons/fa';
 import { useAuth } from '../../../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import './style.css';
 
-const Topbar = () => {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
+const AdminTopbar = ({ toggleSidebar, sidebarOpen }) => {
+  const [searchFocused, setSearchFocused] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { user } = useAuth();
 
   return (
-    <>
-      <div className="TopbarMain">
-        {/* main header starting */}
-        <div className="adminLogo">
-          <svg
-            className="logo-icon"
-            fill="none"
-            viewBox="0 0 48 48"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z"
-              fill="currentColor"
-            />
-          </svg>
-
-          <span className="logoName"> StudentArc</span>
-        </div>
-
-        <div className="header-right">
-          <div className="search">
-            <span className="searchIcon">
-              <GrSearch />
-            </span>
-            <input type="text" placeholder="Search" />
+    <div className="admin-topbar">
+      <div className="admin-topbar-left">
+        <button 
+          className="hamburger-btn"
+          onClick={toggleSidebar}
+          aria-label="Toggle sidebar"
+        >
+          <FaBars />
+        </button>
+        
+        <div className="logo-section">
+          <div className="logo-icon">
+            <span className="logo-text">📊</span>
           </div>
-
-          <button className="icon-btn">
-            <span className="notificationIcon">
-              <BsBell />
-            </span>
-          </button>
-
-          <div
-            className="profile"
-            style={{
-              backgroundImage:
-                'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCK1CoztXiAPtCPgcPeZulSXO2brmUxv8SBoJ3V78tBgWcmafroXqQV_x5m3NOT2bHAEPG8oIGahycMp7DzC3UTLJ6YQ2mJZNhJjgGCtHhNElVemUlrkxOhwpVmSD2CgZWVmUv1iiwpxuo1j3AC8TZ2bBCheUjEsuHgaLZX3ceptGo2uNuty3QMOqD6rBQAz3_NK4ZKLoxo4H8TgHxsQKKlgjBCVdsUt9cNDQuP6pNzWfJ9BpLY6lNzGVriLejNMI4thN662-VhVH7m")',
-            }}
-          ></div>
-
-          <button onClick={handleLogout} className="logout-btn-admin">
-            <MdLogout /> Logout
-          </button>
+          <h1 className="logo-title">EduPlatform</h1>
         </div>
       </div>
-    </>
+
+      <div className="admin-topbar-center">
+        <div className={`search-container ${searchFocused ? 'focused' : ''}`}>
+          <FaSearch className="search-icon" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="search-input"
+            onFocus={() => setSearchFocused(true)}
+            onBlur={() => setSearchFocused(false)}
+          />
+        </div>
+      </div>
+
+      <div className="admin-topbar-right">
+        <div className="notification-container">
+          <button className="notification-btn">
+            <FaBell />
+            <span className="notification-badge">5</span>
+          </button>
+        </div>
+
+        <div className="user-profile-container">
+          <button 
+            className="user-profile-btn"
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+          >
+            <div className="user-avatar">
+              <img 
+                src="https://via.placeholder.com/32x32/4f46e5/ffffff?text=AU" 
+                alt={user?.name || "Admin User"} 
+                className="avatar-img"
+              />
+            </div>
+            <div className="user-info">
+              <span className="user-name">{user?.name || "Admin User"}</span>
+            </div>
+            <FaChevronDown className={`dropdown-arrow ${dropdownOpen ? 'open' : ''}`} />
+          </button>
+
+          {dropdownOpen && (
+            <div className="user-dropdown">
+              <div className="dropdown-item">
+                <FaUser className="dropdown-icon" />
+                <span>Profile</span>
+              </div>
+              <div className="dropdown-item">
+                <span>Settings</span>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default Topbar;
+export default AdminTopbar;
